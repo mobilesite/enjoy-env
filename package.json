@@ -1,0 +1,82 @@
+{
+    "name": "env",
+    "version": "0.0.1",
+    "description": "An library that can get the browser environment of the visitors for you.",
+    "main": "dist/env.cjs.js",
+    "module": "dist/env.es.mjs",
+    "jsnext:main": "dist/env.es.mjs",
+    "author": "dennis",
+    "license": "MIT",
+    "watch": {
+        "build": {
+            "patterns": [
+                "src",
+                "test",
+                "package.json"
+            ],
+            "extensions": "js, jsx, json",
+            "ignore": "",
+            "quiet": true
+        }
+    },
+    "scripts": {
+        "clear": "rm -rf dist",
+        "prebuild": "eslint src test",
+        "build": "./node_modules/.bin/cross-env NODE_ENV=production && yarn clear && rollup -c",
+        "watch": "npm-watch",
+        "pretest": "yarn build",
+        "test": "export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs && karma start karma.config.js",
+        "prepublish": "yarn test"
+    },
+    "files": [
+        "src",
+        "dist"
+    ],
+    "homepage": "https://xxx#readme",
+    "bugs": {
+        "url": "http://xxx/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-eslint": "^7.2.1",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-preset-es2015": "^6.24.0",
+        "babel-preset-stage-2": "^6.22.0",
+        "babel-register": "^6.24.0",
+        "babelrc-rollup": "^3.0.0",
+        "chai": "^3.5.0",
+        "cross-env": "^3.2.4",
+        "eslint": "^3.18.0",
+        "eslint-config-airbnb": "^14.1.0",
+        "eslint-config-airbnb-base": "^11.1.2",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-jsx-a11y": "^4.0.0",
+        "eslint-plugin-react": "^6.10.3",
+        "istanbul": "^0.4.5",
+        "karma": "^1.5.0",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-mocha": "^1.3.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-rollup-plugin": "^0.2.4",
+        "karma-safari-launcher": "^1.0.0",
+        "local-web-server": "^1.2.7",
+        "mocha": "^3.2.0",
+        "mocha-jsdom": "^1.1.0",
+        "npm-watch": "^0.1.8",
+        "rollup": "^0.41.6",
+        "rollup-plugin-babel": "^2.7.1",
+        "rollup-plugin-commonjs": "^8.0.2",
+        "rollup-plugin-eslint": "^3.0.0",
+        "rollup-plugin-istanbul": "^1.1.0",
+        "rollup-plugin-json": "^2.1.0",
+        "rollup-plugin-node-builtins": "^2.1.0",
+        "rollup-plugin-node-globals": "^1.1.0",
+        "rollup-plugin-node-resolve": "^2.0.0",
+        "rollup-plugin-replace": "^1.1.1",
+        "rollup-plugin-uglify": "^1.0.1",
+        "rollup-watch": "^3.2.2",
+        "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+    }
+}
