@@ -14,7 +14,7 @@ let json = require('rollup-plugin-json');// allows Rollup to import data = requi
 let nodeResolve = require('rollup-plugin-node-resolve');// teaches Rollup how to find external modules
 let commonjs = require('rollup-plugin-commonjs');// the majority of packages on npm are exposed as CommonJS modules. We need to convert CommonJS to ES2015 before Rollup can process them.
 let eslint = require('rollup-plugin-eslint');
-var globals = require('rollup-plugin-node-globals');
+let globals = require('rollup-plugin-node-globals');
 let builtins = require('rollup-plugin-node-builtins');
 let istanbul = require('rollup-plugin-istanbul');
 let babel = require('rollup-plugin-babel');
@@ -24,6 +24,11 @@ let babelrc = require('babelrc-rollup').default;
 // let babelConfig  = require('./.babelrc.js');
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
+let fs = require('fs-extra');
+let path = require('path');
+
+//清空dist目录
+fs.removeSync(path.resolve(__dirname, './dist'));
 
 const formatArr = [
     'es',

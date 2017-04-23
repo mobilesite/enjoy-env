@@ -31,6 +31,10 @@ describe('env', () => {
     });
 
     describe('Version()', () => {
+        it('传入版本号为0，返回string类型的0', () => {
+            new Version('0').version.should.equal('0');
+        });
+
         it('传入合法的版本号，返回指定的版本号', () => {
             new Version('1.2.3').version.should.equal('1.2.3');
         });

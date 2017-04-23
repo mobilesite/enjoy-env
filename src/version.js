@@ -28,7 +28,7 @@ export default class Version {
     }
 
     constructor(version) {
-        if (version && !isNaN(parseInt(version, 10))) {
+        if (version !== undefined && !isNaN(parseInt(version, 10))) {
             this.version = `${version}`;// 转成字符串格式
         } else {
             this.version = '';
