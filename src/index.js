@@ -13,12 +13,9 @@ import pcBrowser from './pc-browser';
 import pcSystem from './pc-system';
 import mobileBrowser from './mobile-browser';
 import mobileSystem from './mobile-sytem';
+import getDPR from './getDPR';
 
 const isMobile = mobileSystem !== 'Unknown';
-let CURRENT;
-if (CURRENT === "'production'") {
-    const a = 1;
-}
 
 /**
  * @type {object}
@@ -30,6 +27,7 @@ if (CURRENT === "'production'") {
  */
 export default {
     libVersion: pkg.version,
+    dpr: getDPR(),
     Version,
     app,
     system: isMobile ? mobileSystem : pcSystem,

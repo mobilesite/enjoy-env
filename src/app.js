@@ -45,6 +45,8 @@ for (let n = 0, len = appList.length; n < len; n++) {
 if (!result.name) {
     result.name = 'Unknown';
     result.isUnknown = true;
+} else {
+    result.isUnknown = false;
 }
 
 export default result;

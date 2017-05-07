@@ -24,11 +24,6 @@ let babelrc = require('babelrc-rollup').default;
 // let babelConfig  = require('./.babelrc.js');
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
-let fs = require('fs-extra');
-let path = require('path');
-
-//清空dist目录
-fs.removeSync(path.resolve(__dirname, './dist'));
 
 const formatArr = [
     'es',

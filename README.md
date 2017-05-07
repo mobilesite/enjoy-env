@@ -3,6 +3,37 @@
 ```
 npm i -g yarn
 yarn install
+npm i phantomjs -g
+```
+
+## 配置环境变量
+
+1、windows下配置:
+
+PHANTOMJS_BIN  C:\Users\milon\AppData\Roaming\npm\node_modules\phantomjs\bin\phantomjs
+
+2、Mac系统下配置：
+
+```
+export PHANTOMJS_BIN=/usr/local/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
+```
+
+## package.json文件中scripts下的clear配置的不同：
+
+Windows下：
+
+```
+"scripts": {
+    "clear": "rd /s /q dist"
+}
+```
+
+Mac系统下：
+
+```
+"scripts": {
+    "clear": "rm -rf dist"
+}
 ```
 
 ## API of env library
@@ -14,6 +45,10 @@ import env from 'env';
 ### env.libVersion
 
 获得当前类库的版本号
+
+### env.dpr
+
+获得设备的devicePixelRatio
 
 ### env.Version()
 
@@ -45,7 +80,16 @@ new env.Version('1.2.3').eq('1.2.3')为true。
 
 ## env.app
 
+判别用户是在何种Native APP容器中访问当前页面
 
+env.app.name - 表示在哪个APP中
+env.app.isUnknown - true，不知道在哪个app中（未检测出来）；false，表示检测出来在某个APP中
+env.app.isWeibo - 检测到在微博中
+env.app.isWechat - 检测到在微信中
+
+## env.system
+
+## env.browser
 
 
 
