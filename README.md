@@ -1,6 +1,6 @@
 
 
-## install develop environment
+## install develop enjoyEnvironment
 
 ```
 npm i -g npm
@@ -38,25 +38,25 @@ Mac系统下：
 }
 ```
 
-## API of env library
+## API of enjoyEnv library
 
 引入类库：
 
-import env from 'env';
+import enjoyEnv from 'enjoy-env';
 
-### env.libVersion
+### enjoyEnv.libVersion
 
 获得当前类库的版本号
 
-### env.dpr
+### enjoyEnv.dpr
 
 获得设备的devicePixelRatio
 
-### env.Version()
+### enjoyEnv.Version()
 
-创建一个版本对象，例如`new env.Version('1.2.3')`，将获得一个对象：`{"version":"1.2.3"}`。
+创建一个版本对象，例如`new enjoyEnv.Version('1.2.3')`，将获得一个对象：`{"version":"1.2.3"}`。
 
-`new env.Version('1.2.3')`产生的对象还有gt(version)、gte(version)、lt(version)、lte(version)、eq(version)这几个方法，可以将`new env.Version('1.2.3')`中的version属性 与 传入的version（版本字符串，如'1.0.0'）参数进行比较，判断版本的大小。返回的值是Boolean类型。
+`new enjoyEnv.Version('1.2.3')`产生的对象还有gt(version)、gte(version)、lt(version)、lte(version)、eq(version)这几个方法，可以将`new enjoyEnv.Version('1.2.3')`中的version属性 与 传入的version（版本字符串，如'1.0.0'）参数进行比较，判断版本的大小。返回的值是Boolean类型。
 
 - gt(version)表示大于。
 
@@ -70,28 +70,28 @@ import env from 'env';
 
 例如：
 
-new env.Version('1.2.3').gt('1.0.0')为true;
+new enjoyEnv.Version('1.2.3').gt('1.0.0')为true;
 
-new env.Version('1.2.3').gte('1.2.0')为true;
+new enjoyEnv.Version('1.2.3').gte('1.2.0')为true;
 
-new env.Version('1.2.3').lt('1.2.4')为true;
+new enjoyEnv.Version('1.2.3').lt('1.2.4')为true;
 
-new env.Version('1.2.3').lte('1.2.4')为true;
+new enjoyEnv.Version('1.2.3').lte('1.2.4')为true;
 
-new env.Version('1.2.3').eq('1.2.3')为true。
+new enjoyEnv.Version('1.2.3').eq('1.2.3')为true。
 
-## env.app
+## enjoyEnv.app
 
 判别用户是在何种Native APP容器中访问当前页面
 
-env.app.name - 表示在哪个APP中
-env.app.isUnknown - true，不知道在哪个app中（未检测出来）；false，表示检测出来在某个APP中
-env.app.isWeibo - 检测到在微博中
-env.app.isWechat - 检测到在微信中
+enjoyEnv.app.name - 表示在哪个APP中
+enjoyEnv.app.isUnknown - true，不知道在哪个app中（未检测出来）；false，表示检测出来在某个APP中
+enjoyEnv.app.isWeibo - 检测到在微博中
+enjoyEnv.app.isWechat - 检测到在微信中
 
-## env.system
+## enjoyEnv.system
 
-## env.browser
+## enjoyEnv.browser
 
 
 
