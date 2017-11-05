@@ -5,7 +5,7 @@
   "main": "dist/env.cjs.mjs",
   "module": "dist/env.es.mjs",
   "jsnext:main": "dist/env.es.mjs",
-  "author": "paian",
+  "author": "paian<pai_an@qq.com>",
   "license": "MIT",
   "watch": {
     "build": {
