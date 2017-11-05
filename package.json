@@ -22,7 +22,7 @@
   "scripts": {
     "clear": "rm -rf dist",
     "prebuild": "eslint src test",
-    "build": "./node_modules/.bin/cross-env NODE_ENV=production && npm run clear && rollup -c",
+    "build": "cross-env NODE_ENV=production && npm run clear && rollup -c",
     "watch": "npm-watch",
     "pretest": "npm run build",
     "test": "karma start karma.config.js",
@@ -78,5 +78,17 @@
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^3.2.2",
     "uglify-js": "^3.1.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobilesite/env.git"
+  },
+  "keywords": [
+    "enviroment",
+    "library",
+    "utils"
+  ]
 }
