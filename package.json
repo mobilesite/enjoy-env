@@ -31,9 +31,9 @@
     "src",
     "dist"
   ],
-  "homepage": "https://xxx#readme",
+  "homepage": "https://github.com/mobilesite/enjoy-env#readme",
   "bugs": {
-    "url": "http://xxx/issues"
+    "url": "https://github.com/mobilesite/enjoy-env/issues"
   },
   "dependencies": {
     "babel-preset-env": "^1.6.1"
@@ -83,7 +83,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mobilesite/env.git"
+    "url": "git+https://github.com/mobilesite/enjoy-env.git"
   },
   "keywords": [
     "enviroment",
