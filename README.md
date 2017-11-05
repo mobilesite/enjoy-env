@@ -3,8 +3,8 @@
 ## install develop environment
 
 ```
-npm i -g yarn
-yarn install
+npm i -g npm
+npm install
 npm i phantomjs -g
 ```
 
