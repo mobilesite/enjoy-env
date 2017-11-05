@@ -19,7 +19,7 @@ var replace = require('rollup-plugin-replace');
 var json = require('rollup-plugin-json');// allows Rollup to import data = requirea JSON file
 var commonjs = require('rollup-plugin-commonjs');// the majority of packages on npm are exposed as CommonJS modules. We need to convert CommonJS to ES2015 before Rollup can process them.
 
-var pkg = require('./package.json');
+var pkg = require('../package.json');
 var external = Object.keys(pkg.dependencies);
 var testFiles = [
     'test/**/*_test.js',

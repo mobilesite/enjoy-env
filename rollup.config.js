@@ -36,7 +36,7 @@ const formatArr = [
 // formatArr.map((item) => {
 //     console.log(`building ${item} ...`);
 //     rollup.rollup({
-//         entry: 'src/index.js',
+//         input: 'src/index.js',
 //         plugins: [
 //             json(),
 //             eslint({ // https://www.npmjs.com/package/rollup-plugin-eslint
@@ -79,9 +79,9 @@ const formatArr = [
 //     }).then((bundle) => {
 //         bundle.write({
 //             format: item,
-//             moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-//             sourceMap: true,
-//             dest: item === 'es' ? `dist/env.${item}.mjs` : `dist/env.${item}.js`
+//             name: 'env',// UMD、IIFE模式中需要 name
+//             sourcemap: true,
+//             file: item === 'es' ? `dist/env.${item}.mjs` : `dist/env.${item}.js`
 //         });
 //     }).catch(function(err){
 //         // 注意下rollup的这种用catch方法捕获错误的方式，对于我们获知打包中的错误很有用。
@@ -91,7 +91,7 @@ const formatArr = [
 // });
 
 module.exports = {
-    entry: 'src/index.js',
+    input: 'src/index.js',
     plugins: [
         json(),
         eslint({ // https://www.npmjs.com/package/rollup-plugin-eslint
@@ -133,36 +133,36 @@ module.exports = {
         ))// 注意这里的minify，相应地需要在package.json中添加"uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"，再重新install一下，解决uglify默认无法处理ES2015语法的问题
     ],
     external: external,
-    targets: [
+    output: [
         {
             format: 'es',
-            moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-            sourceMap: true,
-            dest: 'dist/env.es.mjs'
+            name: 'env',// UMD、IIFE模式中需要 name
+            sourcemap: true,
+            file: 'dist/env.es.mjs'
         },
         {
             format: 'amd',
-            moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-            sourceMap: true,
-            dest: 'dist/env.amd.mjs'
+            name: 'env',// UMD、IIFE模式中需要 name
+            sourcemap: true,
+            file: 'dist/env.amd.mjs'
         },
         {
             format: 'cjs',
-            moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-            sourceMap: true,
-            dest: 'dist/env.cjs.mjs'
+            name: 'env',// UMD、IIFE模式中需要 name
+            sourcemap: true,
+            file: 'dist/env.cjs.mjs'
         },
         {
             format: 'iife',
-            moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-            sourceMap: true,
-            dest: 'dist/env.iife.mjs'
+            name: 'env',// UMD、IIFE模式中需要 name
+            sourcemap: true,
+            file: 'dist/env.iife.mjs'
         },
         {
             format: 'umd',
-            moduleName: 'env',// UMD、IIFE模式中需要 moduleName
-            sourceMap: true,
-            dest: 'dist/env.umd.mjs'
+            name: 'env',// UMD、IIFE模式中需要 name
+            sourcemap: true,
+            file: 'dist/env.umd.mjs'
         }
     ]
 }

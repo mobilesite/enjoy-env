@@ -25,8 +25,8 @@
     "build": "cross-env NODE_ENV=production && npm run clear && rollup -c",
     "watch": "npm-watch",
     "pretest": "npm run build",
-    "test": "karma start karma.config.js",
-    "prepublish": "npm run test"
+    "test": "karma start test/karma.config.js"
+    // "prepublish": "npm run test"
   },
   "files": [
     "src",
@@ -62,7 +62,7 @@
     "karma-rollup-plugin": "^0.2.4",
     "karma-safari-launcher": "^1.0.0",
     "local-web-server": "^1.2.7",
-    "mocha": "^3.2.0",
+    "mocha": "^4.0.1",
     "mocha-jsdom": "^1.1.0",
     "npm-watch": "^0.1.8",
     "rollup": "^0.50.0",
