@@ -1,6 +1,6 @@
 /**
  *
- * @author dennis
+ * @author paian
  * @email
  * @since  17/3/31
  */
@@ -13,11 +13,11 @@ var globals = require('rollup-plugin-node-globals');
 var builtins = require('rollup-plugin-node-builtins');
 var nodeResolve = require('rollup-plugin-node-resolve');
 var istanbul = require('rollup-plugin-istanbul');
-let eslint = require('rollup-plugin-eslint');
-let replace = require('rollup-plugin-replace');
+var eslint = require('rollup-plugin-eslint');
+var replace = require('rollup-plugin-replace');
 // Rollup的模块引用只支持 ES6 Module，其他的需要采用 npm 和 commonjs 的插件去解决
-let json = require('rollup-plugin-json');// allows Rollup to import data = requirea JSON file
-let commonjs = require('rollup-plugin-commonjs');// the majority of packages on npm are exposed as CommonJS modules. We need to convert CommonJS to ES2015 before Rollup can process them.
+var json = require('rollup-plugin-json');// allows Rollup to import data = requirea JSON file
+var commonjs = require('rollup-plugin-commonjs');// the majority of packages on npm are exposed as CommonJS modules. We need to convert CommonJS to ES2015 before Rollup can process them.
 
 var pkg = require('./package.json');
 var external = Object.keys(pkg.dependencies);
