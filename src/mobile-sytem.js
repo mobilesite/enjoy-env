@@ -1,7 +1,7 @@
 /**
  * 获取移动端访问设备的系统及版本号
- * @author dennis
- * @email
+ * @author paian
+ * @email  pai_an@qq.com
  * @since  17/3/29
  */
 

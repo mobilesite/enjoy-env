@@ -1,8 +1,8 @@
 /**
  * 获取浏览设备相关信息的工具方法
  * @exports lib/env
- * @author dennis
- * @email
+ * @author paian
+ * @email  pai_an@qq.com
  * @since  17/3/29
  */
 

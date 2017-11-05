@@ -1,7 +1,7 @@
 /**
  * 获取PC操作系统，若是Windows还会具体到细化版本
- * @author dennis
- * @email
+ * @author paian
+ * @email  pai_an@qq.com
  * @since  17/3/29
  */
 

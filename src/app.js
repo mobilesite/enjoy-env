@@ -1,7 +1,7 @@
 /**
  * 判别用户是在何种Native APP容器中访问当前页面
- * @author dennis
- * @email
+ * @author paian
+ * @email  pai_an@qq.com
  * @since  17/3/29
  */
 
