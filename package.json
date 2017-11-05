@@ -1,6 +1,6 @@
 {
   "name": "enjoy-env",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An library that can get the browser environment of the visitors for you.",
   "main": "dist/env.cjs.mjs",
   "module": "dist/env.es.mjs",

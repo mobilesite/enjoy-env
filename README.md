@@ -91,7 +91,23 @@ enjoyEnv.app.isWechat - 检测到在微信中
 
 ## enjoyEnv.system
 
+获取用户设备的操作系统信息，返回信息格式如下
+
+```
+{
+    name: '',      //系统名称
+    version: ''    //系统版本号
+}
+```
+
 ## enjoyEnv.browser
 
+获取用户设备的浏览器信息，返回信息格式如下
 
+```
+{
+    name: '',      //浏览器名称
+    version: ''    //浏览器版本号
+}
+```
 
