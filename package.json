@@ -26,7 +26,6 @@
     "watch": "npm-watch",
     "pretest": "npm run build",
     "test": "karma start test/karma.config.js"
-    // "prepublish": "npm run test"
   },
   "files": [
     "src",
