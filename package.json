@@ -1,93 +1,93 @@
 {
-  "name": "enjoy-env",
-  "version": "1.0.0",
-  "description": "An library that can get the browser environment of the visitors for you.",
-  "main": "dist/env.cjs.mjs",
-  "module": "dist/env.es.mjs",
-  "jsnext:main": "dist/env.es.mjs",
-  "author": "paian<pai_an@qq.com>",
-  "license": "MIT",
-  "watch": {
-    "build": {
-      "patterns": [
+    "name": "enjoy-env",
+    "version": "1.0.1",
+    "description": "A library which can get the browser environment information of the visitors for you.",
+    "main": "dist/enjoyEnv.cjs.mjs",
+    "module": "dist/enjoyEnv.es.mjs",
+    "jsnext:main": "dist/enjoyEnv.es.mjs",
+    "author": "paian<pai_an@qq.com>",
+    "license": "MIT",
+    "watch": {
+        "build": {
+            "patterns": [
+                "src",
+                "test",
+                "package.json"
+            ],
+            "extensions": "js, jsx, json",
+            "ignore": "",
+            "quiet": true
+        }
+    },
+    "scripts": {
+        "prebuild": "eslint src test",
+        "build": "cross-env NODE_ENV=production && rollup -c",
+        "watch": "npm-watch",
+        "pretest": "npm run build",
+        "test": "karma start test/karma.config.js"
+    },
+    "files": [
         "src",
-        "test",
-        "package.json"
-      ],
-      "extensions": "js, jsx, json",
-      "ignore": "",
-      "quiet": true
-    }
-  },
-  "scripts": {
-    "clear": "rm -rf dist",
-    "prebuild": "eslint src test",
-    "build": "cross-env NODE_ENV=production && npm run clear && rollup -c",
-    "watch": "npm-watch",
-    "pretest": "npm run build",
-    "test": "karma start test/karma.config.js"
-  },
-  "files": [
-    "src",
-    "dist"
-  ],
-  "homepage": "https://github.com/mobilesite/enjoy-env#readme",
-  "bugs": {
-    "url": "https://github.com/mobilesite/enjoy-env/issues"
-  },
-  "dependencies": {
-    "babel-preset-env": "^1.6.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.2.1",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-register": "^6.24.0",
-    "babelrc-rollup": "^3.0.0",
-    "chai": "^3.5.0",
-    "cross-env": "^3.2.4",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-config-airbnb-base": "^11.1.2",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "istanbul": "^0.4.5",
-    "karma": "^1.7.1",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.0.1",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-rollup-plugin": "^0.2.4",
-    "karma-safari-launcher": "^1.0.0",
-    "local-web-server": "^1.2.7",
-    "mocha": "^4.0.1",
-    "mocha-jsdom": "^1.1.0",
-    "npm-watch": "^0.1.8",
-    "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-eslint": "^3.0.0",
-    "rollup-plugin-istanbul": "^1.1.0",
-    "rollup-plugin-json": "^2.1.0",
-    "rollup-plugin-node-builtins": "^2.1.0",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-watch": "^3.2.2",
-    "uglify-js": "^3.1.7"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mobilesite/enjoy-env.git"
-  },
-  "keywords": [
-    "enviroment",
-    "library",
-    "utils"
-  ]
+        "dist"
+    ],
+    "homepage": "https://github.com/mobilesite/enjoy-env#readme",
+    "bugs": {
+        "url": "https://github.com/mobilesite/enjoy-env/issues"
+    },
+    "dependencies": {
+        "babel-preset-env": "^1.6.1"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.2.1",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-register": "^6.24.0",
+        "babelrc-rollup": "^3.0.0",
+        "chai": "^3.5.0",
+        "cross-env": "^3.2.4",
+        "eslint": "^3.18.0",
+        "eslint-config-airbnb": "^14.1.0",
+        "eslint-config-airbnb-base": "^11.1.2",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-jsx-a11y": "^4.0.0",
+        "eslint-plugin-react": "^6.10.3",
+        "istanbul": "^0.4.5",
+        "karma": "^1.7.1",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-mocha": "^1.3.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-rollup-plugin": "^0.2.4",
+        "karma-safari-launcher": "^1.0.0",
+        "local-web-server": "^1.2.7",
+        "mocha": "^4.0.1",
+        "mocha-jsdom": "^1.1.0",
+        "npm-watch": "^0.1.8",
+        "rollup": "^0.50.0",
+        "rollup-plugin-babel": "^2.7.1",
+        "rollup-plugin-commonjs": "^8.0.2",
+        "rollup-plugin-eslint": "^3.0.0",
+        "rollup-plugin-istanbul": "^1.1.0",
+        "rollup-plugin-json": "^2.1.0",
+        "rollup-plugin-node-builtins": "^2.1.0",
+        "rollup-plugin-node-globals": "^1.1.0",
+        "rollup-plugin-node-resolve": "^2.0.0",
+        "rollup-plugin-replace": "^1.1.1",
+        "rollup-plugin-uglify": "^1.0.1",
+        "rollup-watch": "^3.2.2",
+        "uglify-js": "^3.1.7"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mobilesite/enjoy-env.git"
+    },
+    "keywords": [
+        "enjoy-env",
+        "enviroment",
+        "library",
+        "utils"
+    ]
 }

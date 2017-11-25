@@ -1,7 +1,7 @@
 /**
  *
  * @author paian
- * @email
+ * @email  pai_an@qq.com
  * @since  17/3/29
  */
 'use strict';
@@ -21,6 +21,7 @@ let babel = require('rollup-plugin-babel');
 let uglify = require('rollup-plugin-uglify');
 let minify  = require('uglify-js').minify;
 let babelrc = require('babelrc-rollup').default;
+let shell = require('shelljs');
 // let babelConfig  = require('./.babelrc.js');
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
@@ -32,6 +33,8 @@ const formatArr = [
     'iife',
     'umd'
 ];
+
+shell.rm('-rf', 'dist');
 
 // formatArr.map((item) => {
 //     console.log(`building ${item} ...`);
@@ -79,9 +82,9 @@ const formatArr = [
 //     }).then((bundle) => {
 //         bundle.write({
 //             format: item,
-//             name: 'env',// UMD、IIFE模式中需要 name
+//             name: 'enjoyEnv',// UMD、IIFE模式中需要 name
 //             sourcemap: true,
-//             file: item === 'es' ? `dist/env.${item}.mjs` : `dist/env.${item}.js`
+//             file: item === 'es' ? `dist/enjoyEnv.${item}.mjs` : `dist/enjoyEnv.${item}.js`
 //         });
 //     }).catch(function(err){
 //         // 注意下rollup的这种用catch方法捕获错误的方式，对于我们获知打包中的错误很有用。
@@ -136,33 +139,33 @@ module.exports = {
     output: [
         {
             format: 'es',
-            name: 'env',// UMD、IIFE模式中需要 name
+            name: 'enjoyEnv',// UMD、IIFE模式中需要 name
             sourcemap: true,
-            file: 'dist/env.es.mjs'
+            file: 'dist/enjoyEnv.es.mjs'
         },
         {
             format: 'amd',
-            name: 'env',// UMD、IIFE模式中需要 name
+            name: 'enjoyEnv',// UMD、IIFE模式中需要 name
             sourcemap: true,
-            file: 'dist/env.amd.mjs'
+            file: 'dist/enjoyEnv.amd.mjs'
         },
         {
             format: 'cjs',
-            name: 'env',// UMD、IIFE模式中需要 name
+            name: 'enjoyEnv',// UMD、IIFE模式中需要 name
             sourcemap: true,
-            file: 'dist/env.cjs.mjs'
+            file: 'dist/enjoyEnv.cjs.mjs'
         },
         {
             format: 'iife',
-            name: 'env',// UMD、IIFE模式中需要 name
+            name: 'enjoyEnv',// UMD、IIFE模式中需要 name
             sourcemap: true,
-            file: 'dist/env.iife.mjs'
+            file: 'dist/enjoyEnv.iife.mjs'
         },
         {
             format: 'umd',
-            name: 'env',// UMD、IIFE模式中需要 name
+            name: 'enjoyEnv',// UMD、IIFE模式中需要 name
             sourcemap: true,
-            file: 'dist/env.umd.mjs'
+            file: 'dist/enjoyEnv.umd.mjs'
         }
     ]
 }

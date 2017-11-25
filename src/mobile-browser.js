@@ -5,76 +5,90 @@
  * @since  17/3/29
  */
 
-import Version from './version';
-
 const ua = window.navigator.userAgent;
 /* eslint-disable import/no-mutable-exports */
 let browser;
 /* eslint-enable import/no-mutable-exports */
-let matched;
 
-if ((matched = ua.match(/(?:UCWEB|UCBrowser\/)([\d.]+)/))) {
+const matched1 = ua.match(/(?:UCWEB|UCBrowser\/)([\d.]+)/);
+const matched2 = ua.match(/MQQBrowser\/([\d.]+)/);
+const matched3 = ua.match(/(?:Firefox|FxiOS)\/([\d.]+)/);
+const matched4 = ua.match(/MSIE\s([\d.]+)/);
+const matched5 = ua.match(/IEMobile\/([\d.]+)/);
+const matched6 = ua.match(/(?:Chrome|CriOS)\/([\d.]+)/);
+const matched7 = ua.match(/Android[\s/]([\d.]+)/);
+const matched8 = ua.match(/Version\/([\d.]+)/);
+const matched9 = ua.match(/OS ([\d_.]+) like Mac OS X/);
+
+if (matched1) {
     browser = {
         name: 'UC',
         isUC: true,
-        version: new Version(matched[1])
+        version: matched1[1]
     };
-} else if ((matched = ua.match(/MQQBrowser\/([\d.]+)/))) {
+} else if (matched2) {
     browser = {
         name: 'QQ',
         isQQ: true,
-        version: new Version(matched[1])
+        version: matched2[1]
     };
-} else if ((matched = ua.match(/(?:Firefox|FxiOS)\/([\d.]+)/))) {
+} else if (matched3) {
     browser = {
         name: 'Firefox',
         isFirefox: true,
-        version: new Version(matched[1])
+        version: matched3[1]
     };
-} else if ((matched = ua.match(/MSIE\s([\d.]+)/)) || (matched = ua.match(/IEMobile\/([\d.]+)/))) {
-    browser = {
-        name: 'IE',
-        isIE: true,
-        version: new Version(matched[1])
-    };
-
+} else if (matched4 || matched5) {
+    if (matched4) {
+        browser = {
+            name: 'IE',
+            isIE: true,
+            version: matched4[1]
+        };
+    } else {
+        browser = {
+            name: 'IE',
+            isIE: true,
+            version: matched5[1]
+        };
+    }
     if (ua.match(/Android|iPhone/)) {
         browser.isIELikeWebkit = true;
     }
-} else if ((matched = ua.match(/(?:Chrome|CriOS)\/([\d.]+)/))) {
+} else if (matched6) {
     browser = {
         name: 'Chrome',
         isChrome: true,
-        version: new Version(matched[1])
+        version: matched6[1]
     };
 
     if (ua.match(/Version\/[\d+.]+\s*Chrome/)) {
         browser.name = 'ChromeWebView';
         browser.isChromeWebView = true;
     }
-} else if (!!ua.match(/Safari/) && (matched = ua.match(/Android[\s/]([\d.]+)/))) {
+} else if (!!ua.match(/Safari/) && matched7) {
     browser = {
         name: 'AndroidDefault',
         isAndroidDefault: true,
-        version: new Version(matched[1])
+        version: matched7[1]
     };
 } else if (ua.match(/iPhone|iPad|iPod/)) {
-    if (ua.match(/Safari/) && (matched = ua.match(/Version\/([\d.]+)/))) {
+    if (ua.match(/Safari/) && matched8) {
         browser = {
             name: 'Safari',
             isSafari: true,
-            version: new Version(matched[1])
+            version: matched8[1]
         };
-    } else if ((matched = ua.match(/OS ([\d_.]+) like Mac OS X/))) {
+    } else if (matched9) {
         browser = {
             name: 'iOSWebView',
             isIOSWebView: true,
-            version: new Version(matched[1].replace(/_/g, '.'))
+            version: matched9[1].replace(/_/g, '.')
         };
     }
 }
 
-if (browser.isChromeWebView || browser.isIOSWebView) {
+if (browser && (browser.isChromeWebView || browser.isIOSWebView)) {
     browser.isWebView = true;
 }
 
@@ -82,7 +96,7 @@ if (browser.isChromeWebView || browser.isIOSWebView) {
 if (!browser) {
     browser = {
         name: 'unknown',
-        version: new Version('0.0.0')
+        version: '0.0.0'
     };
 }
 

@@ -1,6 +1,12 @@
-# env changelog
+# enjoy-env 更新记录
 
-## 0.0.1
+## 1.0.0
 
-* initial experiment
+* 首次发布
+
+## 1.0.1
+
+* 删除了Version方法，将它单独剥离出去。
+* version属性类型由原来的对象改成字符串类型，以使其语义更为明晰。
+
 

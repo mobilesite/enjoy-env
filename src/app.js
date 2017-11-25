@@ -25,7 +25,7 @@ const ua = window.navigator.userAgent;
 
 /**
  * @type {Object}
- * @memberof lib.env
+ * @memberof lib.enjoyEnv
  * @property {String} name - APP名称，如Weibo/Weixin／QSChou等
  * @property {Boolean} isWeChat - 是否微信
  * @property {Boolean} isWeibo - 是否微博

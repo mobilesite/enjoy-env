@@ -5,8 +5,6 @@
  * @since  17/3/29
  */
 
-import Version from './version';
-
 /**
  * 待检测的PC浏览器名称和UserAgent标志列表
  * @type {Object}
@@ -51,7 +49,7 @@ for (let n = 0; n < len; n++) {
         const itemName = browserList[n].name;
         result = {
             name: itemName,
-            version: new Version(matched[1].split('_').join('.'))
+            version: matched[1].split('_').join('.')
         };
         result[`is${itemName}`] = true;
     }
@@ -60,7 +58,7 @@ for (let n = 0; n < len; n++) {
 if (!result || !result.name) {
     result = {
         name: 'Unknown',
-        version: new Version('0.0.0')
+        version: '0.0.0'
     };
 }
 

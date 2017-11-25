@@ -5,8 +5,6 @@
  * @since  17/3/29
  */
 
-import Version from './version';
-
 const ua = window.navigator.userAgent;
 const platform = window.navigator.platform;
 /* eslint-disable import/no-mutable-exports */
@@ -75,7 +73,7 @@ if (result.name) {
 }
 
 if (!result.version) {
-    result.version = new Version('0.0.0');// 为了保证与mobile设备相应数据的一致性，这里统一使用new Version('0.0.0')，以便于通过设备进行导出
+    result.version = '0.0.0';// 为了保证与mobile设备相应数据的一致性，这里统一使用'0.0.0'，以便于通过设备进行导出
 }
 
 export default result;
